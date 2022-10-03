@@ -38,4 +38,23 @@ $("#hour5 .description").val(localStorage.getItem("hour5"));
 
 /* TRACKING HOURS OF THE DAY */
 
-// I still need to learn how I can make code to track the hours of the day
+// This code will help to track the user's current hour and color code the past, present, and future hours
+$(".description").each(function () {
+    // setting a variable for the time blocks
+    var timeBlocks = parseInt($(this).attr("id"));
+
+    // If any time blocks are equivalent to the user's current hour, then add the "present" class to that time block and remove all other classes within this statement
+    if (timeBlocks === userHours) {
+        $(this).addClass("past");
+        $(this).removeClass("present");
+        $(this).removeClass("future");
+    } else if (timeBlocks < userHours) { // If any time blocks are past the user's current hour, then add the "past" class to that time block and remove all other classes within this statement
+        $(this).removeClass("past");
+        $(this).addClass("present");
+        $(this).removeClass("future");
+    } else { // If the user's current hour is behind the future hours, then add the "future" class to that time block and remove all other classes within this statement
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+    }
+});
