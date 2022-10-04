@@ -71,7 +71,7 @@ THEN each timeblock is color coded to indicate whether it is in the past, presen
 ```
 
 ![Code that shows how each time block's color is being changed periodically](./Assets/Images/Step-3-Code.png)
-![Alt text](./posts/path/to/img.jpg) ---- NEED TO FIX HERE
+![Shows an image of the proper workings of step three on the webpage](./Assets/Images/Step-2-Webpage.png)
 
 In te first image above we can see that the code we are using to change the hour time blocks periodically based on the the user's current time when certain conditions are being met. Also in the last image we see that their are the three classes in the code that are being shown which is the past, present, and the future with the colors representing each hourly period. The past hours are being represented with the color gray, the present hour is being represented with the color red, and the future hours to come are represented with the color green.
 
@@ -83,7 +83,7 @@ THEN I can enter an event
 ```
 
 ![Image of code displaying step four requirements](./Assets/Images/Step-4-Code.png)
-![Alt text](./posts/path/to/img.jpg) ---- NEED TO FIX HERE
+![All three time blocks can have events written into them](./Assets/Images/Step-4-Webpage.png)
 
 As you can see in the Step Four code that all time blocks from 9AM - 5PM all have the "textarea" element which allows user input to be inputted through the use of text, though it is not saved simply because the user inputs text, but when the user clicks on the save button next to the "textarea" HTML element. In the second image provided above, we are able to see that the user is indeed able enter an event on which ever time block they wish to.
 
@@ -95,7 +95,7 @@ THEN the text for that event is saved in local storage
 ```
 
 ![Step Five code is shown in detail of how it was accomplished](./Assets/Images/Step-5-Code.png)
-![Alt text](./posts/path/to/img.jpg) ---- NEED TO FIX HERE
+![Image of the webpage and the local saved data within the local storage](./Assets/Images/Step-5-Webpage.png)
 
 The step Five that is being provided shows that the user is able to click the save button and a function will run. When the button is clicked, then the div for which the user has clicked the save button through will save with the id that was given through that div as a time block. As the button is clicked, the jquery function will run and try to find the class named "description" and save it's key value which is also within the same div that the id was in. Now as the id is saved and the value of the description is being saved, we set the IDs as keys to the values with their given description. Both the keys (the IDs) and values (descriptions) are being set and saved onto local storage. Finally, as you can see in the next image below, how the keys and values are being saved through local storage through the application.
 
@@ -107,6 +107,6 @@ THEN the saved events persist
 ```
 
 ![Step Six code solution](./Assets/Images/Step-6-Code.png)
-![Alt text](./posts/path/to/img.jpg) ---- NEED TO FIX HERE
+![After refreshing the webpage, the saved data will remain and load itself in its own saved location](./Assets/Images/Step-6-Webpage.png)
 
 Finally at Step Six, we have to save and load all of our information that we saved through local storage. In the code provided above, we see that I used the same pattern of code to load each and every different and seperate id for each of the time blocks with their given information. Also notice that only the keys and values are being saved, however, not the color of time is being shown along with the saved data. Lastly in the GIF above shows how the information above is being saved and loaded back by refreshing the webpage of the deployed application.
