@@ -2,8 +2,6 @@
 
 // Used later to display user's current date
 var currentDate = moment().format('dddd, MMMM Do');
-// Used later to track the user's current hour
-var userHours = moment().hour();
 
 /* CURRENT USER'S DATE */
 
@@ -39,16 +37,18 @@ $("#hour5 .description").val(localStorage.getItem("hour5"));
 /* TRACKING HOURS OF THE DAY */
 
 // This code will help to track the user's current hour and color code the past, present, and future hours
-$(".description").each(function () {
+$(".time-block").each(function () {
+    // Used later to track the user's current hour
+    var userHours = moment().hour();
     // setting a variable for the time blocks
-    var timeBlocks = parseInt($(this).attr("id"));
+    var timeBlocks = parseInt($(this).attr("id").split("hour")[1]);
 
     // If any time blocks are equivalent to the user's current hour, then add the "present" class to that time block and remove all other classes within this statement
-    if (timeBlocks === userHours) {
+    if (timeBlocks < userHours) {
         $(this).addClass("past");
         $(this).removeClass("present");
         $(this).removeClass("future");
-    } else if (timeBlocks < userHours) { // If any time blocks are past the user's current hour, then add the "past" class to that time block and remove all other classes within this statement
+    } else if (timeBlocks === userHours) { // If any time blocks are past the user's current hour, then add the "past" class to that time block and remove all other classes within this statement
         $(this).removeClass("past");
         $(this).addClass("present");
         $(this).removeClass("future");
